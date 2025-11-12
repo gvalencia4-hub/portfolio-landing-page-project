@@ -1,0 +1,173 @@
+/* 1) Global CSS variables */
+:root {
+  --bg: #0e0e0e;        /* page background */
+  --text: #ffffff;      /* main text color */
+  --muted: #a3a3a3;     /* body copy */
+  --accent: #22c55e;    /* CTA green */
+  --container: 1200px;  /* content width */
+  --radius: 8px;        /* rounded corners */
+}
+
+/* 2) Base font */
+html, body {
+  font-family: "Poppins", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+}
+
+/* 3) Apply colors (this is where your red underlines were) */
+body {
+  color: var(--text);
+  background: var(--bg);
+  margin: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Container (what you already have) */
+.container {
+  max-width: var(--container);
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+}
+
+/* NAVBAR */
+.navbar {
+  background: var(--panel);
+  border-bottom: 1px solid #262626;
+}
+.navbar .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 0;
+}
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 28px;
+  margin: 0;
+  padding: 0;
+}
+.nav-links a {
+  color: #d4d4d4;
+  text-decoration: none;
+  font-weight: 600;
+}
+.nav-links a:hover {
+  color: var(--accent);
+}
+.socials {
+  display: flex;
+  gap: 16px;
+}
+.socials a {
+  color: #8a8a8a;
+  text-decoration: none;
+  font-weight: 700;
+}
+
+/* HERO */
+.hero {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 56px;
+  padding: 72px 0;
+}
+.hero-text {
+  max-width: 560px;
+}
+.hero h1 {
+  margin: 0 0 12px;
+  font-size: 48px;
+  font-weight: 700;
+  letter-spacing: 0.2px;
+}
+.hero p {
+  margin: 0 0 28px;
+  color: var(--muted);
+  line-height: 1.7;
+}
+.btn {
+  display: inline-block;
+  background: var(--accent);
+  color: #fff;
+  text-decoration: none;
+  padding: 14px 28px;
+  border-radius: var(--radius);
+  font-weight: 700;
+  box-shadow: 0 12px 24px rgba(34, 197, 94, 0.25);
+}
+.btn:hover {
+  filter: brightness(1.08);
+}
+
+.hero-photo img {
+    width: 420px;
+    height: 420px;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: 50% 45%;
+}
+
+}
+
+}
+
+/* FOOTER */
+.footer {
+  padding: 32px 0;
+  color: #9ca3af;
+  border-top: 1px solid #262626;
+  margin-top: 40px;
+}
+
+/* Responsive */
+@media (max-width: 960px) {
+  .hero {
+    flex-direction: column;
+    text-align: left;
+  }
+  .hero-photo img {
+    width: 260px;
+    height: 260px;
+  }
+}
+@media (max-width: 640px) {
+  .nav-links {
+    flex-wrap: wrap;
+    gap: 18px;
+  }
+}
+/* ===== Hero photo fix ===== */
+.hero-photo{
+  width: 360px;
+  height: 360px;
+  margin: 0 auto;              /* centers the circle */
+}
+
+.hero-photo img{
+  width: 100%;
+  height: 100%;
+  display: block;
+  border-radius: 50%;           /* circle crop */
+  object-fit: cover;            /* fill circle without distortion */
+ object-position: 60% 10%;
+  /* ↑ lower % = moves image up (shows more hair) */
+  box-shadow: 0 12px 24px rgba(0,0,0,.25); /* optional */
+}
+
+/* Smaller circle on phones */
+@media (max-width: 640px){
+  .hero-photo{ width: 260px; height: 260px; }
+}
+/* Subtitle under name */
+.role{
+  margin-top: .35rem;
+  color: #e6e6e6;      /* slightly brighter than body text */
+  font-size: 1.15rem;  /* smaller than the H1 */
+  font-weight: 600;    /* semi-bold */
+  letter-spacing: .2px;
+}
+
